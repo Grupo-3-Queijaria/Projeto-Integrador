@@ -14,10 +14,13 @@ class MyApp extends StatelessWidget {
       navigateRoute: const HomeScreen(),
       duration: 3000,
       imageSize: 130,
-      imageSrc: "assets/queijos-finos.jpeg",
-      text: "Queijos Finos Biopark",
-      textStyle: const TextStyle(fontSize: 30.0),
-      backgroundColor: Colors.white,
+      imageSrc: "assets/queijos-finos.png",
+      text: "Seja muito bem vindo ao melhor app de Engenharia de Soft",
+      textStyle: const TextStyle(
+        fontSize: 30.0,
+        color: Colors.white,
+      ),
+      backgroundColor: const Color(0xFF0D2838),
     );
 
     return MaterialApp(
@@ -33,10 +36,25 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: const Color(0xFF0D2838),
         title: Image.asset(
-          'assets/queijos-finos.jpeg',
+          'assets/queijos-finos.png',
           height: 40,
-          ),
+        ),
+        iconTheme: const IconThemeData(
+          color: Colors.white,
+        ),
+        actions: [
+          Padding(
+            padding: const EdgeInsets.only(right: 50.0),
+            child: IconButton(
+            icon: const Icon(Icons.notifications),
+            onPressed: () {
+              print("Botão de notificação pressionada");
+            },
+          )
+          )
+        ],
       ),
       drawer: Drawer(
         child: ListView(
@@ -44,7 +62,7 @@ class HomeScreen extends StatelessWidget {
           children: [
             const DrawerHeader(
               decoration: BoxDecoration(
-                color: Colors.blue,
+                color: const Color(0xFF0D2838),
               ),
               child: Text(
                 'Menu',
@@ -53,7 +71,7 @@ class HomeScreen extends StatelessWidget {
                   fontSize: 24,
                 ),
               ),
-            ),  
+            ),
           ],
         ),
       ),
