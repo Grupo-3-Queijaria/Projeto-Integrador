@@ -1,0 +1,35 @@
+name: QueijosFinos
+description: Projeto para produzir queijos AuAu.
+
+# Versão do SDK Flutter
+environment:
+  sdk: ">=2.18.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # Outras dependências (caso você precise de pacotes adicionais, como provider, http, etc)
+  # exemplo:
+  # provider: ^6.0.3
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+# Gerenciamento de assets e fontes
+flutter:
+
+  # Assets de mídia (imagens, ícones, etc.)
+  assets:
+    - assets/images/queijo.png
+  
+  # Fontes do projeto
+  fonts:
+    - family: Kaisei Decol
+      fonts:
+        - asset: assets/fonts/KaiseiDecol-SemiBold.ttf
+    - family: Inter
+      fonts:
+        - asset: assets/fonts/Inter-Bold.ttf
+
