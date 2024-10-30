@@ -1,0 +1,38 @@
+name: produtor_app
+description: Aplicativo para exibição de dados do produtor.
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.17.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  firebase_core: ^2.4.1
+  cloud_firestore: ^4.3.0
+
+  # Dependências adicionais para o app
+  # Caso precise de imagens customizadas
+  cached_network_image: ^3.2.3
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/images/queijo.png  # Exemplo de caminho de imagem
+
+  fonts:
+    - family: Kaisei Decol
+      fonts:
+        - asset: assets/fonts/KaiseiDecol-Regular.ttf
+        - asset: assets/fonts/KaiseiDecol-SemiBold.ttf
+          weight: 600
+    - family: Inter
+      fonts:
+        - asset: assets/fonts/Inter-Regular.ttf
+        - asset: assets/fonts/Inter-Bold.ttf
+          weight: 700
