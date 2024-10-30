@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'CustomAppBar.dart';
+import 'RegistroPropriedades.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -6,27 +8,7 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: const Color(0xFF0D2838),
-        title: Image.asset(
-          'assets/queijos-finos.png',
-          height: 40,
-        ),
-        iconTheme: const IconThemeData(
-          color: Colors.white,
-        ),
-        actions: [
-          Padding(
-            padding: const EdgeInsets.only(right: 50.0),
-            child: IconButton(
-            icon: const Icon(Icons.notifications),
-            onPressed: () {
-              print("Botão de notificação pressionada");
-            },
-          )
-          )
-        ],
-      ),
+      appBar: CustomAppBar(),
       drawer: Drawer(
         child: ListView(
           padding: EdgeInsets.zero,
@@ -49,13 +31,34 @@ class HomePage extends StatelessWidget {
                       color: Colors.white,
                       fontSize: 18,
                     ),
-                  )
+                  ),
                 ],
               ),
-            )
+            ),
+            ListTile(
+              leading: const Icon(Icons.home),
+              title: const Text('Home'),
+              onTap: () {
+                Navigator.pop(context); // Fecha o Drawer e permanece na HomePage
+              },
+            ),
+            ListTile(
+              leading: const Icon(Icons.list_alt),
+              title: const Text('Registro de Propriedades'),
+              onTap: () {
+                Navigator.pop(context); // Fecha o Drawer
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const RegistroPropriedades(),
+                  ),
+                );
+              },
+            ),
           ],
         ),
-      )
+      ),
+      
     );
   }
 }
