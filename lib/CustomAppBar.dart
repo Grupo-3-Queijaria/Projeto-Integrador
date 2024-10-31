@@ -15,14 +15,14 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
       backgroundColor: const Color(0xFF0D2838),
       title: Image.asset(
         'assets/queijos-finos.png',
-        height: 40,
+        height: 45,
       ),
       iconTheme: const IconThemeData(
         color: Colors.white,
       ),
       actions: [
         Padding(
-          padding: const EdgeInsets.only(right: 50.0),
+          padding: const EdgeInsets.only(right: 20.0),
           child: IconButton(
             icon: const Icon(Icons.notifications),
             onPressed: () {
