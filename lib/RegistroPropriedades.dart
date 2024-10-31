@@ -56,7 +56,8 @@ class RegistroPropriedades extends StatelessWidget {
         children: [
           // Título estilizado "REGISTRO DE PROPRIEDADES"
           Padding(
-            padding: const EdgeInsets.symmetric(vertical: 20.0, horizontal: 16.0),
+            padding:
+                const EdgeInsets.symmetric(vertical: 20.0, horizontal: 16.0),
             child: Container(
               padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
               decoration: BoxDecoration(
@@ -88,56 +89,94 @@ class RegistroPropriedades extends StatelessWidget {
               ),
             ),
           ),
-          
+
           // Lista de propriedades
           Expanded(
             child: ListView.builder(
               itemCount: propriedades.length,
               itemBuilder: (context, index) {
                 final propriedade = propriedades[index];
+                bool isExpanded = false;
+
                 return Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 16.0),
+                  padding: const EdgeInsets.symmetric(
+                      vertical: 8.0, horizontal: 16.0),
                   child: Card(
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(20),
                     ),
                     elevation: 4,
-                    child: ListTile(
-                      leading: Image.asset(
-                        propriedade['imagem']!,
-                        width: 50,
-                        height: 50,
-                        fit: BoxFit.cover,
-                      ),
-                      title: Text(
-                        propriedade['nome']!,
-                        style: const TextStyle(
-                          fontSize: 16,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                      subtitle: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [  
-                          Text(
-                        propriedade['produtor']!,
-                        style: const TextStyle(
-                          fontSize: 16,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                     Text(
-                     (propriedade['produto']!),
-                     style: const TextStyle(
-                      fontSize: 14,
-                      color: Colors.grey,
-                     ),
-                     ),
-                    ],
-                  ),
-                    trailing: const Icon(Icons.arrow_forward_ios),
-                      onTap: () {
-                        // Ação ao clicar em cada item
+                    child: StatefulBuilder(
+                      builder: (context, setState) {
+                        return ExpansionTile(
+                          leading: Image.asset(
+                            propriedade['imagem']!,
+                            width: 50,
+                            height: 50,
+                            fit: BoxFit.cover,
+                          ),
+                          title: Text(
+                            propriedade['nome']!,
+                            style: const TextStyle(
+                              fontSize: 16,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                          subtitle: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                propriedade['produtor']!,
+                                style: const TextStyle(
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                              Text(
+                                (propriedade['produto']!),
+                                style: const TextStyle(
+                                  fontSize: 14,
+                                  color: Colors.grey,
+                                ),
+                              ),
+                            ],
+                          ),
+                          trailing: AnimatedRotation(
+                            turns: isExpanded
+                                ? 0.5
+                                : 0.0, // 0.5 volta completa (180 graus)
+                            duration: const Duration(milliseconds: 300),
+                            child: const Icon(Icons.arrow_drop_down),
+                          ),
+                          onExpansionChanged: (expanded) {
+                            setState(() {
+                              isExpanded = expanded;
+                            });
+                          },
+                          children: [
+                            Padding(
+                              padding:
+                                  const EdgeInsets.symmetric(horizontal: 16.0),
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text('Email: ${propriedade['email']}'),
+                                  Text('Telefone: ${propriedade['telefone']}'),
+                                  Text('CNPJ: ${propriedade['cnpj']}'),
+                                  Text('CPF: ${propriedade['cpf']}'),
+                                  const SizedBox(height: 10),
+                                  ElevatedButton(
+                                    onPressed: () {
+                                      // Ação do botão "Ver Mais"
+                                    },
+                                    child: const Text('Ver Mais'),
+                                  ),
+                                ],
+                              ),
+                            ),
+                            const SizedBox(height: 10), // Espaço entre os itens
+                          ],
+                        );
                       },
                     ),
                   ),
