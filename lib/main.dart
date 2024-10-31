@@ -16,7 +16,6 @@ class MyApp extends StatelessWidget {
       duration: 3000,
       imageSize: 130,
       imageSrc: "assets/queijos-finos.png",
-      text: "Seja muito bem vindo ao melhor app de Engenharia de Soft",
       textStyle: const TextStyle(
         fontSize: 30.0,
         color: Colors.white,
