@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:menu_hamburguer/HomePage.dart';
 import 'package:splash_screen_view/SplashScreenView.dart';
-import 'HomePage.dart';
 
 void main() {
   runApp(MyApp());
@@ -12,7 +12,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Widget splashScreen = SplashScreenView(
-      navigateRoute: const HomePage(),
+      navigateRoute: HomePage(),
       duration: 3000,
       imageSize: 130,
       imageSrc: "assets/queijos-finos.png",
@@ -26,6 +26,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false, // Remove a faixa de debug
       home: splashScreen,
+      
     );
   }
 }
+
