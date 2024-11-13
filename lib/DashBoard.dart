@@ -23,7 +23,7 @@ Widget buildDashBoardCards() {
     mainAxisSpacing: 16,
     children: [
         buildDashboardCard("Desistentes", "2", "Produtores", Colors.red),
-        buildDashboardCard("Em complementação", "5", "Produtores", Colors.yellow[700]!),
+        buildDashboardCard("Complementação", "5", "Produtores", Colors.yellow),
         buildDashboardCard("Ativos", "10", "Produtores", Colors.green),
         buildDashboardCard("Total", "17", "Produtores", Colors.blue),
     ],
