@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:menu_hamburguer/DashBoard.dart';
+import 'DashBoard.dart';
 import 'CustomAppBar.dart';
 import 'RegistroPropriedades.dart';
 
@@ -60,10 +60,9 @@ class HomePage extends StatelessWidget {
         ),
       ),
 
-      body: Center(
-        child: DashBoard()
-        ),
-      
+      body: const Center(
+        child: DashBoard(),
+        ),   
     );
   }
 }

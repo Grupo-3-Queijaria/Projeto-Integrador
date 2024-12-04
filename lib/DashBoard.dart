@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:menu_hamburguer/CustomAppBar.dart';
 
 class DashBoard extends StatelessWidget {
   const DashBoard({super.key});
@@ -7,25 +6,19 @@ class DashBoard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
+      backgroundColor: const Color(0xFFF5F5F5), // Define o fundo do Scaffold
+      body: ListView(
+        padding: const EdgeInsets.all(16.0),
         children: [
-          Expanded (
-            flex: 1,
-            child: Padding(
-              padding: const EdgeInsets.all(16.0),
-              child: buildDashBoardCards(),
-            ),
-            ),
-          Expanded(
-            flex: 2,
-            child: Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: buildUserList(),
-              ),
-              ),  
+          // Cartões do dashboard
+          buildDashBoardCards(),
+
+          const SizedBox(height: 16), // Espaçamento entre os widgets
+
+          // Lista de usuários
+          buildUserList(),
         ],
       ),
-      backgroundColor: const Color(0xFFF5F5F5),
     );
   }
 
@@ -34,6 +27,8 @@ class DashBoard extends StatelessWidget {
       crossAxisCount: 2,
       crossAxisSpacing: 16,
       mainAxisSpacing: 16,
+      shrinkWrap: true, // Ajusta o tamanho do GridView ao conteúdo
+      physics: const NeverScrollableScrollPhysics(), // Desabilita o scroll interno
       children: [
         buildDashboardCard("Desistentes", "2", "Produtores", Colors.red),
         buildDashboardCard("Complementação", "5", "Produtores", Colors.yellow),
@@ -93,32 +88,37 @@ class DashBoard extends StatelessWidget {
     );
   }
 
-  // Função para renderizar a listagem de usuários
   Widget buildUserList() {
     final List<Map<String, String>> users = [
       {
         'name': 'Maria Das Dores',
         'email': 'mariaqueijos@gmail.com',
         'qualidade': 'XXXXXXXX',
+        'data': '12/02/2024'
       },
       {
-        'name': 'Maria Das Dores',
-        'email': 'mariaqueijos@gmail.com',
+        'name': 'João da Silva',
+        'email': 'joaodasilva@gmail.com',
         'qualidade': '00000-0000/00001',
+        'data': '02/07/2023'
       },
       {
-        'name': 'Maria Das Dores',
-        'email': 'mariaqueijos@gmail.com',
+        'name': 'Ana Pereira',
+        'email': 'anapereira@gmail.com',
         'qualidade': '00000-0000/00001',
+        'data': '21/10/2023'
       },
       {
-        'name': 'Maria Das Dores',
-        'email': 'mariaqueijos@gmail.com',
+        'name': 'Carlos Alberto',
+        'email': 'carlos@gmail.com',
         'qualidade': '00000-0000/00001',
+        'data': '11/01/2024'
       },
     ];
 
     return ListView.builder(
+      shrinkWrap: true, // Ajusta o tamanho do ListView ao conteúdo
+      physics: const NeverScrollableScrollPhysics(), // Desabilita o scroll interno
       itemCount: users.length,
       itemBuilder: (context, index) {
         final user = users[index];
@@ -143,7 +143,7 @@ class DashBoard extends StatelessWidget {
                   ),
                   const SizedBox(height: 4),
                   Text(
-                    'Email:${user['email']}',
+                    'Email: ${user['email']}',
                     style: const TextStyle(
                       fontSize: 14,
                     ),
@@ -155,13 +155,11 @@ class DashBoard extends StatelessWidget {
                       color: Colors.grey,
                     ),
                   ),
-                  const SizedBox(height: 8),
-                  TextField(
-                    decoration: InputDecoration(
-                      labelText: 'Data:',
-                      border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(8),
-                      ),
+                  Text(
+                    'Data: ${user['Data']}',
+                    style: const TextStyle(
+                      fontSize: 16,
+                      fontWeight: FontWeight.bold,
                     ),
                   ),
                 ],
