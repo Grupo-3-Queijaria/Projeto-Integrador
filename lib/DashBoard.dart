@@ -162,6 +162,24 @@ class DashBoard extends StatelessWidget {
                       fontWeight: FontWeight.bold,
                     ),
                   ),
+              
+                  const SizedBox(height: 8),
+                  ElevatedButton(
+                    onPressed: () {
+
+                      print("Download PDF ${user['name']}");
+                    },
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.blue,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                    ),
+                    child: const Text(
+                      'Gerar PDF',
+                      style: TextStyle(color: Colors.white),
+                    ),
+                  ),
                 ],
               ),
             ),
