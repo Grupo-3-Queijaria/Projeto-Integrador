@@ -1,5 +1,6 @@
 // CustomAppBar.dart
 import 'package:flutter/material.dart';
+import 'package:menu_hamburguer/TelaNotificacao.dart';
 
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
@@ -26,6 +27,12 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
           child: IconButton(
             icon: const Icon(Icons.notifications),
             onPressed: () {
+              Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => const TelaNotificacao(), // Substitua por sua classe de notificações
+              ),
+            );
               // Defina uma ação se necessário
             },
           ),

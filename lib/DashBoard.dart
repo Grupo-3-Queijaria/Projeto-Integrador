@@ -139,6 +139,7 @@ class DashBoard extends StatelessWidget {
                     style: const TextStyle(
                       fontSize: 16,
                       fontWeight: FontWeight.bold,
+                      color: Color(0xFF8B6914),
                     ),
                   ),
                   const SizedBox(height: 4),
@@ -146,13 +147,14 @@ class DashBoard extends StatelessWidget {
                     'Email: ${user['email']}',
                     style: const TextStyle(
                       fontSize: 14,
+                      color: Color(0xFF8B6914),
                     ),
                   ),
                   Text(
                     'Qualidade: ${user['qualidade']}',
                     style: const TextStyle(
                       fontSize: 14,
-                      color: Colors.grey,
+                      color: Color(0xFF8B6914),
                     ),
                   ),
                   Text(
@@ -160,6 +162,7 @@ class DashBoard extends StatelessWidget {
                     style: const TextStyle(
                       fontSize: 16,
                       fontWeight: FontWeight.bold,
+                      color: Color(0xFF8B6914),
                     ),
                   ),
               

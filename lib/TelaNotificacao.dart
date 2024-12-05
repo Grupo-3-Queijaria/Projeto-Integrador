@@ -98,3 +98,12 @@ class TelaNotificacao extends StatelessWidget {
     );
   }
 }
+
+final List<Map<String, String>> notifications = [
+  {'title': 'VENCIMENTO CONTRATO ÀTANI', 'date': '09/11/2024'},
+  {'title': 'VENCIMENTO CONTRATO FLOR DA TERRA', 'date': '22/10/2024'},
+  {'title': 'VENCIMENTO CONTRATO LUDWIG', 'date': '17/11/2024'},
+  {'title': 'VISITA ÀTANI', 'date': '20/10/2024'},
+  {'title': 'VISITA FLOR DA TERRA', 'date': '22/10/2024'},
+  {'title': 'VISITA LUDWIG', 'date': '17/11/2024'},
+];
