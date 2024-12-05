@@ -17,6 +17,7 @@ dependencies:
   cupertino_icons: ^1.0.8
   splash_screen_view: ^2.0.0
   fl_chart: 0.36.0
+  open_file: ^3.2.1
 
 dev_dependencies:
   flutter_test:
@@ -34,3 +35,4 @@ flutter:
     - assets/atani.png
     - assets/vila_belli.png
     - assets/falcao.png
+    - assets/Indice_Teste.pdf

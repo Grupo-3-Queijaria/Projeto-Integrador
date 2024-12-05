@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:menu_hamburguer/GerarPdf.dart';
 
 class DashBoard extends StatelessWidget {
   const DashBoard({super.key});
@@ -170,7 +171,8 @@ class DashBoard extends StatelessWidget {
                   ElevatedButton(
                     onPressed: () {
 
-                      print("Download PDF ${user['name']}");
+                      final pdfGenerator = GerarPdf();
+                            pdfGenerator.loadAndSharePDF(); // Chama a função para carregar e compartilhar a classe
                     },
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.blue,

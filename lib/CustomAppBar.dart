@@ -9,14 +9,17 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   CustomAppBar({Key? key})
       : preferredSize = const Size.fromHeight(56.0),
         super(key: key);
+        
 
   @override
   Widget build(BuildContext context) {
     return AppBar(
       backgroundColor: const Color(0xFF0D2838),
+      centerTitle: true,
       title: Image.asset(
         'assets/queijos-finos.png',
         height: 45,
+    
       ),
       iconTheme: const IconThemeData(
         color: Colors.white,

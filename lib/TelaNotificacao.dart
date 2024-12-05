@@ -8,11 +8,15 @@ class TelaNotificacao extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: const Color(0xFF0D2838),
+        iconTheme: const IconThemeData(color: Colors.white),
+        centerTitle: true,
+        
         title: const Text(
           'QUEIJOS FINOS',
           style: TextStyle(
             fontWeight: FontWeight.bold,
             color: Colors.white,
+            
           ),
         ),
         actions: [
